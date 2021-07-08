@@ -1,0 +1,10 @@
+.contactCard {
+    border-radius: 7px !important;
+}
+.cardFooter > * {
+    margin: 10px;
+}
+.cardHeader {
+    font-size: 23px;
+    font-weight: bold;
+}

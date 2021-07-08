@@ -1,0 +1,22 @@
+{
+    "name": "mern_app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "nodemon server.js",
+        "client": "cd client && npm start",
+        "mern": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.12.14",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.3.0"
+    }
+}
