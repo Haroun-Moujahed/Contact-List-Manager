@@ -18,4 +18,5 @@ app.listen(PORT, (err) => {
 connectDB();
 
 // 3- connecting the routes (CRUD)
-app.use("/api/contacts/", require("./routes/contact"));
+// app.use("/api/contacts/", require("./routes/contact"));
+app.use("/api/users/", require("./routes/user"));
