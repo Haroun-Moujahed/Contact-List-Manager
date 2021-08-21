@@ -1,16 +1,27 @@
 import "./App.css";
-import NavBar from "./Components/NavBar/NavBar";
 import AddContact from "./Components/AddContact/AddContact";
 import ContactsList from "./Components/ContactsList/ContactsList";
-import { Switch, Route } from "react-router-dom";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import PublicRoute from "./Components/PublicRoute/PublicRoute";
+import UserLogin from "./Components/UserLogin/UserLogin";
+import UserSignUp from "./Components/UserSignUp/UserSignUp";
+import Home from "./Components/Home/Home";
+
+import { Switch } from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
-            <NavBar />
             <Switch>
-                <Route path="/addContact" render={() => <AddContact />} />
-                <Route path="/" render={() => <ContactsList />} />
+                <PrivateRoute path="/contactsList" component={ContactsList} />
+                <PrivateRoute path="/addContact" component={AddContact} />
+                <PublicRoute restricted={false} path="/home" component={Home} />
+                <PublicRoute
+                    restricted={true}
+                    path="/signUp"
+                    component={UserSignUp}
+                />
+                <PublicRoute restricted={true} path="/" component={UserLogin} />
             </Switch>
         </div>
     );

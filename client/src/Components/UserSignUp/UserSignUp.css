@@ -1,0 +1,17 @@
+.LoginForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+}
+.formContainer {
+    background-image: url("https://images.pexels.com/photos/2397652/pexels-photo-2397652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    border-radius: 7px;
+    border: 2px black solid;
+    padding: 3%;
+    color: white;
+}
+.loginLink {
+    color: white;
+}

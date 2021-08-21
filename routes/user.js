@@ -8,7 +8,7 @@ const { extractToken } = require("../middlewares/user");
 require("dotenv").config();
 
 // registration
-// @route   POST api/user/register
+// @route   POST api/users/register
 // @desc    this route is for registering the user
 // @access  Public
 router.post("/register", (req, res) => {
@@ -62,7 +62,6 @@ router.post("/login", (req, res) => {
                             jwt.sign(
                                 { user },
                                 process.env.SECRETKEY,
-                                { expiresIn: 20 },
                                 (err, token) => {
                                     if (err) throw err;
                                     res.status(200).json({
@@ -72,7 +71,12 @@ router.post("/login", (req, res) => {
                                     });
                                 }
                             );
-                        } else res.send("wrong password");
+                        } else {
+                            res.status(400).json({
+                                status: 400,
+                                msg: "wrong password",
+                            });
+                        }
                     }
                 );
             } else {

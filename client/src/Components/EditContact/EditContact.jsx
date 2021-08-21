@@ -10,7 +10,6 @@ function EditContact({ contact, history }) {
     const handleShow = () => setShow(true);
 
     const [updatedContact, setUpdatedContact] = useState({})
-    console.log(updatedContact)
 
     const handleChange = (e) => {
         setUpdatedContact({ ...updatedContact, [e.target.name]: e.target.value })
